@@ -1,57 +1,88 @@
 public class Main {
     public static void main(String[] args) {
+        task1();
+        task2();
+        task3();
+        task4();
+        task5();
+    }
+
+    public static void task1() {
 
         // Задача 1
         byte fiveFloorBuilding = 25;
         short ochtaCentre = 403;
-        int ostTeleTower= 540;
-        long burjDubai = 812l;
+        int ostTeleTower = 540;
+        long burjDubai = 812L;
         float cnTower = 553.33f;
         double johnHancockTower = 457.2;
         boolean highestTower = burjDubai > cnTower;
         char positive = 43;
-       // System.out.println(highestTower);
+    }
+
+    public static void task2() {
 
         // Задача 2
         double boxer1 = 78.2;
         double boxer2 = 82.7;
         double weightOfAllBoxer = boxer1 + boxer2;
-        double weightDifference = boxer2 - boxer1;
+        double weightDifference = Math.abs(boxer2 - boxer1);
         System.out.println("Общий вес боксеров = " + weightOfAllBoxer + " кг.");
         System.out.println("Разница в весе боксеров = " + weightDifference + " кг.");
+    }
+
+    public static void task3() {
 
         // Задача 3
-        int banana = 80;
-        int milk = 105;
-        int iceCream = 100;
-        int egg = 70;
-        int allWeight = banana * 5 + milk * 2 + iceCream * 2 + egg * 4;
+        int bananaWeight = 80;
+        int banana = 5;
+
+
+        int milkWeight = 105;
+        int milk = 2;
+
+        int iceCreamWeight = 100;
+        int iceCream = 2;
+
+        int eggWeight = 70;
+        int egg = 4;
+
+        int allWeight = (banana * bananaWeight) + (milk * milkWeight) + (iceCream * iceCreamWeight) + (egg * eggWeight);
         int grPerKg = 1000;
-        float weightKg = allWeight/(float)grPerKg;
+        float weightKg = allWeight / (float) grPerKg;
         System.out.println("Вес спорт-завтрака = " + weightKg + " кг.");
+    }
+
+    public static void task4() {
 
         // Задача 4
         int excessWeightKg = 7;
         int excessWeightGr = excessWeightKg * 1000;
-        int firstType = excessWeightGr / 250;
-        int secondType = excessWeightGr / 500;
-        int thirdTypeGr = (500 + 250) / 2;
-        int thirdType = excessWeightGr / thirdTypeGr;
+        int minLost = 250;
+        int maxLost = 500;
+        int firstType = excessWeightGr / minLost;
+        int secondType = excessWeightGr / maxLost;
+        int thirdType = (firstType + secondType) / 2;
         System.out.println(firstType + " дней при потере веса 250 грамм.");
         System.out.println(secondType + " дней при потере веса 500 грамм.");
-        System.out.println(thirdType + " дней при потере веса " + thirdTypeGr + " грамм.");
+        System.out.println(thirdType + " дней при потере в среднем.");
+    }
+
+    public static void task5() {
 
         //Задача 5
         int mashaNow = 67_760;
         int denisNow = 83_690;
         int kristyNow = 76_230;
-        float increase = 1.1f;
-        float mashaNew = mashaNow * increase;
-        float denisNew = denisNow * increase;
-        float kristyNew = kristyNow * increase;
-        float mashaDifferenceYear = mashaNew * 12 - mashaNow * 12;
-        float denisDifferenceYear = denisNew * 12 - denisNow * 12;
-        float kristyDifferenceYear = kristyNew * 12 - kristyNow * 12;
+        int percent = 10;
+        double growth = percent / (100 * 1.0);
+        int mashaNew = (int) (mashaNow + (mashaNow * growth));
+        int denisNew = (int) (denisNow + (denisNow * growth));
+        int kristyNew = (int) (kristyNow + (kristyNow * growth));
+        int year = 12;
+        int mashaDifferenceYear = (mashaNew - mashaNow) * year;
+        int denisDifferenceYear = (denisNew - denisNow) * year;
+        int kristyDifferenceYear = (kristyNew - kristyNow) * year;
         System.out.println("Маша теперь получает " + mashaNew + " рублей. Годовой доход вырос на " + mashaDifferenceYear + " рублей.");
         System.out.println("Денис теперь получает " + denisNew + " рублей. Годовой доход вырос на " + denisDifferenceYear + " рублей.");
         System.out.println("Кристина теперь получает " + kristyNew + " рублей. Годовой доход вырос на " + kristyDifferenceYear + " рублей.");
